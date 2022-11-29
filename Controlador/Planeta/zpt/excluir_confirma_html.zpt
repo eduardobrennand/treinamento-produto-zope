@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/SistemaSolar/styles/form.css">  
+
+<html metal:use-macro="container/template/macros/template_principal">
+
+    <div metal:fill-slot="body_html">
+        <header metal:use-macro="container/header/macros/header_principal"></header>
+        
+        <div tal:repeat="planeta options/planeta">
+            <h1>Tem certeza que deseja excluir o planeta <b tal:content="planeta/nome">nome</b>?</h1>
+
+            <p><a tal:attributes="href string: excluir_planeta?id_planeta=${planeta/id_planeta}"> SIM! </a></p>
+            <br>
+            <p><a href="home">NAO!</a></p>
+        </div>
+
+        <footer metal:use-macro="container/footer/macros/footer_principal"></footer>
+    </div>
+</html>

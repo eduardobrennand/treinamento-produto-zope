@@ -1,0 +1,34 @@
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Luas</title>
+
+        <link rel="stylesheet" href="/SistemaSolar/styles/main.css">  
+</head>
+
+<html metal:use-macro="options/template">
+    
+    <main metal:fill-slot="body_html">
+        <header metal:use-macro="options/header"></header>
+
+            <section class="solar-system-section" tal:repeat="planeta options/planeta">
+                <h1>Luas Planeta: <b tal:content="planeta/nome">Nome</b></h1>
+                <a href=""  tal:attributes="href string: adicionar_lua?id_planeta=${planeta/id_planeta}">
+                    <span class="planet-text">Adicionar nova Lua</span>
+                </a>  
+                <h3>Selecione a lua que voce deseja visitar: </h3>
+                <div class="solar-system-wrapper">
+                    <div class="solar-system-container" tal:repeat="lua options/luas">
+                        <div class="solar-system-planet" >
+                            <a href=""  tal:attributes="href string: lua?id_lua=${lua/id_lua}">
+                                <span class="planet-text" tal:content="lua/nome">Nome</span>
+                            </a>    
+                        </div> 
+                    </div>
+                </div>    
+            </section>
+
+        <footer metal:use-macro="options/footer"></footer>
+    </main>
+</html>

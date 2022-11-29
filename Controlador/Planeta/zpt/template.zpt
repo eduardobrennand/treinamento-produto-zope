@@ -1,0 +1,5 @@
+<html metal:define-macro="template_principal">
+        <body>
+            <div metal:define-slot="body_html"></div>
+        </body>
+</html>

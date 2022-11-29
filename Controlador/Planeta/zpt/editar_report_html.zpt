@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/SistemaSolar/styles/form.css">
+
+<html metal:use-macro="container/template/macros/template_principal">
+  
+    <div metal:fill-slot="body_html">
+    
+        <header metal:use-macro="container/header/macros/header_principal"></header>
+        <div tal:repeat="planeta options/planeta">
+            <h1>Planeta <b tal:content="planeta/nome">nome</b> foi editado com sucesso!</h1>
+
+            <p><a href="" tal:attributes="href string: planeta?id_planeta=${planeta/id_planeta}">Retornar</a></p>
+        </div>
+
+        <footer metal:use-macro="container/footer/macros/footer_principal"></footer>
+    </div>
+</html>

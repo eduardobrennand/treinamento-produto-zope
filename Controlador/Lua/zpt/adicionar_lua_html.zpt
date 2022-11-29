@@ -1,0 +1,34 @@
+<head>
+    <title>Adicionar Lua</title>
+    <link rel="stylesheet" href="/SistemaSolar/styles/form.css">  
+</head>
+
+<html metal:use-macro="options/template">
+    <main metal:fill-slot="body_html">
+        <header metal:use-macro="options/header"></header>
+        <form  tal:repeat="lua options/lua" action="adicionar_lua_report" method="get">
+        <h1>Adicionar nova Lua:<br></h1><table>
+        
+        <tr><th>Id_planeta</th>
+            <td><input type="hidden"
+                    name="id_planeta"
+                    size="30" tal:attributes="value lua/id_planeta"></td></tr>
+        <tr><th>Nome</th>
+            <td><input name="nome"
+                    size="30" value=""></td></tr>
+        <tr><th>Descricao</th>
+            <td><input name="descricao"
+                    size="30" value=""></td></tr>
+        <tr><th>Distancia</th>
+            <td><input name="distancia"
+                    size="30" value=""></td></tr>
+        <tr><td colspan=2 align=center>
+
+        
+        <input type="SUBMIT" name="SUBMIT" value="Adicionar">
+        </td></tr>
+        </table>
+        </form>
+        <footer metal:use-macro="options/footer"></footer>
+    </main>
+</html>

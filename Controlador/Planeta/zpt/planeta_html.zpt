@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Planeta</title>
+        <link rel="stylesheet" href="/SistemaSolar/styles/planet.css">       
+</head>
+<html metal:use-macro="container/template/macros/template_principal">
+
+     <main metal:fill-slot="body_html">
+            <header metal:use-macro="container/header/macros/header_principal"></header>
+
+            <section class="planet-section">
+                <a href="home">
+                    <i class="arrow left"></i>
+                </a>
+                <div class="planet-wrapper">
+                
+                    <div class="planet-container" tal:repeat="planeta options/planeta">
+                        <h1 tal:content="planeta/nome">Titulo</h1> 
+                        <img src="sample/img.png" tal:attributes="src string: /SistemaSolarZPT/${planeta/img_url}">
+                        <div class="planet-text">
+                            <h3>Descricao <b tal:content="planeta/nome">Planeta</b>:</h3>
+                            <p tal:content="planeta/descricao"></p>
+                        </div>
+
+                        <div class="planet-text">
+                            <h3>Curiosidades <b tal:content="planeta/nome">Planeta</b>:</h3>
+                            <p tal:content="planeta/curiosidades"></p>
+                        </div>
+
+                        <div class="planet-text">
+                            <h3>Massa <b tal:content="planeta/nome">Planeta</b>:</h3>
+                            <p>O planeta <b tal:content="planeta/nome">Nome</b> possui uma massa de <b tal:content="planeta/massa">Massa</b>KG</p>
+                        </div>
+
+                        <div class="planet-text">
+                            <h3>Raio <b tal:content="planeta/nome">Planeta</b>:</h3>
+                            <p>O planeta <b tal:content="planeta/nome">Nome</b> possui um raio de <b tal:content="planeta/raio">raio</b>M</p>
+                        </div>
+
+                        <div class="planet-text">
+                            <a href="sample" tal:attributes="href string: luas?id_planeta=${planeta/id_planeta}">
+                                Luas
+                            </a>
+                        </div>
+
+                        <div class="planet-text">
+                            <a href="sample" tal:attributes="href string: editar_planeta?id_planeta=${planeta/id_planeta}">
+                                Editar
+                            </a>
+                        </div>
+
+                        <div class="planet-text">
+                            <a href="sample" tal:attributes="href string: excluir_confirma?id_planeta=${planeta/id_planeta}">
+                                Excluir
+                            </a>
+                        </div>
+                    </div>         
+                </div>       
+            </section>  
+            <footer metal:use-macro="container/footer/macros/footer_principal"></footer> 
+        </main>
+</html>

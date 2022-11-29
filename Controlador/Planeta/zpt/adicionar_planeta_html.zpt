@@ -1,0 +1,43 @@
+<head>
+    <title>Adicionar Planeta</title>
+    <link rel="stylesheet" href="/SistemaSolar/styles/form.css">  
+</head>
+
+<html metal:use-macro="container/template/macros/template_principal">
+   
+    <div metal:fill-slot="body_html">
+        <header metal:use-macro="container/header/macros/header_principal"></header>
+        <form action="adicionar_report" method="get">
+        <h1>Adicionar novo planeta:<br></h1><table>
+        
+        <tr><th>Nome</th>
+            <td><input name="nome"
+                    size="30" value=""></td></tr>
+        <tr><th>Descricao</th>
+            <td><input name="descricao"
+                    size="30" value=""></td></tr>
+        <tr><th>Curiosidades</th>
+            <td><input name="curiosidades"
+                    size="30" value=""></td></tr>
+        <tr><th>Massa</th>
+            <td><input name="massa"
+                    size="30" value=""></td></tr>
+        <tr><th>Raio</th>
+            <td><input name="raio"
+                    size="30" value=""></td></tr>
+        <tr><td colspan=2 align=center>
+
+        <tr><th>Cor do Planeta</th>
+            <td><select name="img_url">
+            <option value="images/Roxo">Roxo</option>
+            <option value="images/Verde">Verde</option>
+            </select></td></tr>
+        <tr><td colspan=2 align=center>
+
+        <input type="SUBMIT" name="SUBMIT" value="Adicionar">
+        </td></tr>
+        </table>
+        </form>
+        <footer metal:use-macro="container/footer/macros/footer_principal"></footer>
+    </div>
+</html>

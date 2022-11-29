@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/SistemaSolar/styles/form.css">  
+<html metal:use-macro="container/template/macros/template_principal">
+    
+    <div metal:fill-slot="body_html">
+        <header metal:use-macro="container/header/macros/header_principal"></header>
+
+        <div tal:repeat="planeta options/planeta">
+            <h1>Planeta <b tal:content="planeta/nome">nome</b> excluido com sucesso!</h1>
+        </div>
+        <p><a href="home">Retornar</a></p>
+
+        <footer metal:use-macro="container/footer/macros/footer_principal"></footer>
+    </div> 
+</html>

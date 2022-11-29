@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/SistemaSolar/styles/form.css">  
+<html metal:use-macro="options/template">
+
+    <main metal:fill-slot="body_html">
+        <header metal:use-macro="options/header"></header>
+        <h1>Lua adicionada com sucesso!</h1>
+
+
+        <p><a href="home">Retornar</a></p>
+        <footer metal:use-macro="options/footer"></footer>
+    </main>
+
+</html>

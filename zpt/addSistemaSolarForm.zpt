@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+	<title>Adiciona produto</title>
+</head>
+<body>
+    <form name="form" action="manage_addSistemaSolar"><br>
+	    <p>ID desejado para a nova instancia do SistemaSolar:</p>
+	    <input type="text" name="id:string"><br>
+	    <input type="submit" value="add">
+	</form>
+</body>
+</html>

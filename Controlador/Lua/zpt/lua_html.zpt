@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/SistemaSolar/styles/planet.css">  
+
+<html metal:use-macro="options/template">
+        <main metal:fill-slot="body_html">
+            <header metal:use-macro="options/header"></header>
+
+            <section class="planet-section">
+                <div class="planet-wrapper">
+                                       
+                    <div class="planet-container" tal:repeat="lua options/lua">
+                        <h1 tal:content="lua/nome">Titulo</h1> 
+                        <div class="planet-text">
+                            <h3>Descricao <b tal:content="lua/nome">Lua</b>:</h3>
+                            <p tal:content="lua/descricao"></p>
+                        </div>
+
+
+                        <div class="planet-text">
+                            <h3>Distancia <b tal:content="lua/nome">Lua</b>:</h3>
+                            <p>A lua <b tal:content="lua/nome">Nome</b> fica a <b tal:content="lua/distancia">distancia</b>KMs de distancia do seu planeta.</p>
+                        </div>
+
+                        <div class="planet-text">
+                            <a href="sample" tal:attributes="href string: home">
+                                Retornar
+                            </a>
+                        </div>
+
+                        <div class="planet-text">
+                            <a href="sample" tal:attributes="href string: editar_lua?id_lua=${lua/id_lua}">
+                                Editar
+                            </a>
+                        </div>
+
+                        <div class="planet-text">
+                            <a href="sample" tal:attributes="href string: excluir_lua_confirma?id_lua=${lua/id_lua}">
+                                Excluir
+                            </a>
+                        </div>
+                    </div>        
+                </div>     
+            </section>
+            <footer metal:use-macro="options/footer"></footer>
+        </main>
+</html>

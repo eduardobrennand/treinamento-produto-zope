@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Sistema Solar</title>
+
+            <link rel="stylesheet" href="/SistemaSolar/styles/main.css">       
+</head>
+
+<html metal:use-macro="container/template/macros/template_principal">
+   
+
+
+    <main metal:fill-slot="body_html">
+        <header metal:use-macro="container/header/macros/header_principal"></header>
+        
+        <section class="solar-system-section">
+            <h1>Bem-vindo ao Sistema Solar!</h1>
+            <h3>Selecione o planeta que voce deseja visitar: </h3>
+            <div class="solar-system-wrapper">
+                <div class="solar-system-container" tal:repeat="planeta options/planetas">
+                    <div class="solar-system-planet" >
+                        <a href=""  tal:attributes="href string: planeta?id_planeta=${planeta/id_planeta}">
+                            <img class="planet-img" src="sample/img.png" tal:attributes="src string: /SistemaSolarZPT/${planeta/img_url}">
+                        </a>
+                        <span class="planet-text" tal:content="planeta/nome">Nome</span>
+                    </div> 
+                </div>
+                <h1>Adicionar novo planeta: </h1>
+                <p class="solar-system-link"><a href="adicionar_planeta_form">Adicionar</a></p>
+            </div>    
+        </section>
+
+        <footer metal:use-macro="container/footer/macros/footer_principal"></footer>
+    </main>
+</html>

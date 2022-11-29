@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/SistemaSolar/styles/form.css">  
+
+<html metal:use-macro="options/template">
+    <main metal:fill-slot="body_html">
+        <header metal:use-macro="options/header"></header>
+        <div tal:repeat="lua options/lua">
+            <h1>Tem certeza que deseja excluir o lua <b tal:content="lua/nome">nome</b>?</h1>
+
+            <p><a tal:attributes="href string: excluir_lua?id_lua=${lua/id_lua}"> SIM! </a></p>
+            <br>
+            <p><a href="home">NAO!</a></p>
+        </div>
+        <footer metal:use-macro="options/footer"></footer>
+    </main>
+</html>

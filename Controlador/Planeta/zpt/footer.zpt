@@ -1,0 +1,3 @@
+<footer metal:define-macro="footer_principal" class="footer-teste">
+    <p> Treinamento Nube - Eduardo Brennand </p>
+</footer>

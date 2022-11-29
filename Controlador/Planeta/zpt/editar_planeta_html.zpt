@@ -1,0 +1,39 @@
+<head>
+    <title>Formulario de Edicao</title>
+    <link rel="stylesheet" href="/SistemaSolar/styles/form.css">  
+</head>
+
+<html metal:use-macro="container/template/macros/template_principal">
+    
+    
+    <div metal:fill-slot="body_html">
+        <header metal:use-macro="container/header/macros/header_principal"></header>
+        <form tal:repeat="edit options/planeta" action="editar_report" method="get">
+        Editar planeta:<br><table>
+
+        <tr><th>Nome</th>
+            <td><input name="nome"
+                    size="30" tal:attributes="value edit/nome"></td></tr>
+        <tr><th>Descricao</th>
+            <td><input name="descricao"
+                    size="30" tal:attributes="value edit/descricao"></td></tr>
+        <tr><th>Curiosidades</th>
+            <td><input name="curiosidades"
+                    size="30" tal:attributes="value edit/curiosidades"></td></tr>
+        <tr><th>Massa</th>
+            <td><input name="massa"
+                    size="30" tal:attributes="value edit/massa"></td></tr>
+        <tr><th>Raio</th>
+            <td><input name="raio"
+                    size="30" tal:attributes="value edit/raio"></td></tr>
+        <tr><th></th>
+            <td><input type="hidden" name="id_planeta"
+                    size="30" tal:attributes="value edit/id_planeta"></td></tr>
+        <tr><td colspan=2 align=center>
+        <input type="SUBMIT" name="SUBMIT" value="Editar">
+        </td></tr>
+        </table>
+        </form>
+        <footer metal:use-macro="container/footer/macros/footer_principal"></footer>
+    </div>
+</html>
